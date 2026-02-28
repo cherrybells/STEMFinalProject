@@ -37,7 +37,7 @@ function startGame() {
 
 function jump() {
     if (game_state === 'Play') {
-        bird_dy = -5.5; 
+        bird_dy = -5.0; 
     }
 }
 
