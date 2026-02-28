@@ -1,7 +1,7 @@
 let move_speed = 3;
 let gravity = 0.35;
 let initialGravity = 0.05; // slow start
-let gravityIncreaseRate = 0.01; // slower ramp for first posts
+let gravityIncreaseRate = 0.01; // slow ramp for first posts
 let maxGravity = 0.35;
 
 let bird = document.querySelector('.hironobird');
@@ -35,9 +35,11 @@ function startGame() {
     play();
 }
 
+// Adjusted jump
 function jump() {
     if (game_state === 'Play') {
-        bird_dy = -3.5; 
+        // Set jump relative to gravity for balanced flight
+        bird_dy = -0.35 * 20; // = -7, feels smooth with gravity
     }
 }
 
@@ -70,9 +72,8 @@ function play() {
 
         /* Gravity gradually increases depending on score */
         gravityTimer += 1/60; // assuming ~60fps
-        // Increase gravity slowly until max, but faster after 10 points
         let effectiveGravity = initialGravity + gravityIncreaseRate * gravityTimer;
-        if (parseInt(score_val.innerHTML) > 10) effectiveGravity = gravity; // normal gravity after 10 points
+        if (parseInt(score_val.innerHTML) > 10) effectiveGravity = gravity;
         if (effectiveGravity > maxGravity) effectiveGravity = maxGravity;
         bird_dy += effectiveGravity;
 
@@ -83,6 +84,7 @@ function play() {
             return;
         }
 
+        /* Move pipes and check collision */
         pipe_sprite.forEach(element => {
             let pipe_props = element.getBoundingClientRect();
 
