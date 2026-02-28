@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN PAGE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        hr{
+            border: none;
+            height: 5px;
+            background: linear-gradient(white, gold);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+        .leftcolumn, .rightcolumn {   
+            width: 100%;
+            padding: 0;
+        }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
+        @media screen and (max-width: 400px) {
+        .topnav a {
+            float: none;
+            width: 100%;
+        }
+        }
+    </style>
+</head>
+<body class="mainpage">
+    <div class="mainpage">
+        <img src="pictures/logo.png">
+        <h1>LAGUNA COLLEGE OF BUSINESS AND ARTS</h1>
+        <h3>96 Years of Excellence: Thousands of Success Stories</h3>
+
+        <hr>
+
+        <p class="welcome">Welcome,</p>
+        <p id="students">LCBAIANS!</p>
+    </div>
+
+    <div class="buttons">
+        <a href="About LCBA.html">About LCBA</a>
+        <a href="About STEM.html">About STEM</a>
+        <a href="Image Gallery.html">Image Gallery</a>
+        <a href="Video Gallery.html">Video Gallery</a>
+        <a href="Games.html">Games</a>
+    </div>
+</body>
+</html>

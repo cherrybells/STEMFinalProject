@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Web Design Layout</title>
+
+  <link rel="stylesheet" href="style.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background-image: url("pictures/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #0D1B3A;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 0%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background: linear-gradient(#f0f8ff, #4169E1);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="STEMHEADER">
+  <div class="StemLogo"></div>
+  <h1 id="header h1">Science, Technology, Engineering, and Mathematics (STEM)</h1>
+</div>
+
+
+<div class="topnav">
+  <a href="Main Page.html">Main Page</a>
+  <a href="About LCBA.html">About LCBA</a>
+  <a href="Image Gallery.html">Image Gallery</a>
+  <a href="Video Gallery.html">Video Gallery</a>
+  <a href="Games.html" style="float:right">Games</a>
+</div>
+
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <p id="letters">STEM, which stands for Science, Technology, Engineering, and Mathematics, is one of the most popular strands under the Academic Track in Senior High School in the Philippines. It is also offered as part of LCBA’s Senior High School (SHS) programs. STEM is perfect for students who want challenging subjects, future-ready skills, and careers in science and technology.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="containerbox">
+    <p id="letters">This strand is designed for students who are interested in:</p>
+
+    <div class="wrapper">
+          <div class="interestbox">
+              <div class="interest-title"></div>
+              <div class="interest-content">Science experiments and discoveries</div>
+          </div>
+
+          <div class="interestbox">
+              <div class="interest-title"></div>
+              <div class="interest-content">Technology and innovation</div>
+          </div>
+
+          <div class="interestbox">
+              <div class="interest-title"></div>
+              <div class="interest-content">Engineering and design</div>
+          </div>
+
+          <div class="interestbox">
+              <div class="interest-title"></div>
+              <div class="interest-content">Advanced mathematics and problem-solving</div>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="Card">
+  <h1 id="STEM">What You Learn in STEM Strand</h1>
+  <p id="letters">STEM students take subjects that focus on research, computation, and scientific skills, such as:</p>
+  
+  <div class="subjects">
+    <span>General Biology</span>
+    <span>General Chemistry</span>
+    <span>General Physics</span>
+    <span>Pre-Calculus and Basic Calculus</span>
+    <span>Research and Scientific Investigation</span>
+    <span>Engineering-related concepts</span>
+  </div>
+</div>
+
+<div class="box-cont">
+  <div class="Boxes">
+    <div class="grid">
+      <div>
+        <h1 id="STEM">Best College Courses After STEM</h1>
+        <p>STEM is the best choice if you want to take courses like:<br>
+        ●	Engineering (Civil, Mechanical, Electrical, etc.)<br>
+        ●	Medicine / Nursing / Pharmacy<br>
+        ●	Computer Science / Information Technology<br>
+        ●	Architecture<br>
+        ●	Biology, Chemistry, Physics<br>
+        ●	Mathematics and Statistics
+        </p>
+      </div>
+
+      <div>
+        <h1 id="STEM">Future Careers for STEM Students</h1>
+        <p>Graduates often become:<br>
+        ●	Engineers<br>
+        ●	Doctors or healthcare professionals<br>
+        ●	Scientists or researchers<br>
+        ●	Programmers and software developers<br>
+        ●	Architects<br>
+        ●	Data analysts
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

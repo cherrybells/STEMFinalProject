@@ -1,0 +1,367 @@
+.mainpage{
+    text-align: center;
+    background-image: url("pictures/background.jpg");
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Century Gothic;
+}
+
+img{
+    height: 150px;
+    width: 200px;
+}
+
+h1{
+    font-size: 40px;
+    font-family: Century Gothic;
+}
+
+h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.welcome{
+    font-size: 60px;
+    font-family: Vivaldi;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+
+#students{
+    font-size: 90px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    margin-top: 0px;
+    letter-spacing: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+.buttons a{
+    background-color: #f1f1f1;
+    padding: 14px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid black;
+}
+
+.buttons a :hover{
+    background: #003366;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(#f1f1f1, #1E90FF);
+}
+
+.logo{
+  background-image: url("pictures/logo.png");
+  width: 200px;
+  height: 150px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  margin: auto;
+}
+
+#header p {
+  font-size: 35px;
+  color: black;
+  font-family: Century Gothic;
+  font-weight: bolder;
+}
+
+.header p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(#f1f1f1, #1E90FF);
+  margin-top: 20px;
+}
+
+/*ABOUT LCBA*/
+.aboutLCBA{
+    max-width: 1500px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: linear-gradient(white, #1E90FF);
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba (0,0,0,0.1); 
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 10px;
+}
+
+.boxcontainer { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px; 
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.boxes{
+    background: linear-gradient(white, #1E90FF);
+    padding: 15px; 
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 0px;
+}
+
+.box-cont{ 
+    padding: 10px; 
+    margin-top: 5px; 
+}
+
+.boxes {
+    width: 100%;
+    background: linear-gradient(white, #1E90FF);
+    padding: 15px; 
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 5px; 
+}
+
+.qo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* reduced */
+    margin-top: 10px;
+    text-align: left;
+}
+
+/*About STEM*/
+.StemLogo{
+    background-image: url("pictures/STEM LOGO.jpg");
+    width: 200px;
+    height: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    margin: auto;
+}
+
+#STEMHEADER{
+    background: linear-gradient(#f1f1f1, #4169E1);
+    text-align: center;
+}
+
+.strandcontainer {
+    background: linear-gradient(#f0f8ff, #4169E1);
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.strandcontainer h2 {
+    margin-bottom: 30px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.interestbox {
+    background: linear-gradient(#f0f8ff, #4169E1);
+    width: 200px;
+    height: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    border: 2px solid black; 
+}
+
+/* Title section */
+.interest-title {
+    padding: 20px;
+    font-weight: bold;
+}
+
+/* Hidden content */
+.interest-content {
+    padding: 0 15px;
+    opacity: 0;
+    transition: 0.4s ease;
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Hover effect */
+.interestbox:hover {
+    height: 80px;
+}
+
+.interestbox:hover .interest-content {
+    opacity: 1;
+    margin-top: -10px;
+}
+
+#STEM{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 45px;
+}
+
+.Card {
+  background: linear-gradient(#f0f8ff, #4169E1);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.subjects {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 15px; 
+  margin-top: 15px;
+}
+
+.subjects span {
+  background-color: #f0f8ff; 
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap; 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.Boxes {
+    width: 100%;
+    background: linear-gradient(#f1f1f1, #4169E1);
+    padding: 15px; 
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 5px; 
+    font-size: 20px;
+}
+
+#letters {
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*IMAGE GALLERY*/
+div.scroll-container {
+  background: linear-gradient(to right, #e3f2fd, #90caf9);;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+div.scroll-container img {
+  height: 500px;   
+  width: 450PX;     
+  display: inline-block;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+/*Video Gallery*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#f0f8ff, #1E90FF);
+}
+
+/* MAIN CONTAINER */
+.main-container {
+    width: 95%;
+    margin: 50px auto;
+}
+
+/* GRID: 2 ROWS × 4 COLS */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 350px;
+    gap: 15px;
+    background: linear-gradient(#f1f1f1, #4169E1);
+}
+
+/* INDIVIDUAL VIDEO BOX */
+.video-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid black;
+    background: black;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INDIVIDUAL LID */
+.lid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30,144,255,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: transform 0.4s ease;
+}
+
+/* LID slides up on hover */
+.video-box:hover .lid {
+    transform: translateY(-100%);
+}

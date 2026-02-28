@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Web Design Layout</title>
+
+  <link rel="stylesheet" href="style.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background-image: url("pictures/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #0D1B3A;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 0%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo"></div>
+  <h1 id="header h1">LAGUNA COLLEGE OF BUSINESS AND ARTS</h1>
+  <p>96 Years of Excellence: Thousands of Success Stories</p>
+</div>
+
+
+<div class="topnav">
+  <a href="Main Page.html">Main Page</a>
+  <a href="About STEM.html">About STEM</a>
+  <a href="Image Gallery.html">Image Gallery</a>
+  <a href="Video Gallery.html">Video Gallery</a>
+  <a href="Games.html" style="float:right">Games</a>
+</div>
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="aboutLCBA">
+      <h1 id="STEM">ABOUT LCBA</h1>
+      <h1 id="STEM">THE FOUNDER</h1>
+      <p>Pedro Evangelista Llamas was born in Pagsanjan, Laguna on August 01, 1884. Both of his parents, Gabriel Llamas and Eleutera Evangelista were born and raised in the same town too.</p>
+      <p>He studied in St. Joseph Catholic School in Hongkong for two years and continued his education in the United States where he received his Bachelor of Science in Pharmaceutical Chemistry from the University of Michigan.</p>
+      <p>At the young age of 28, he married Josefa Gomez Francia on August 26, 1912 and was blessed with nine children: Herminio, Guadalupe, Fidel, Amor, Luis, Jose, Mario, Carlos, and Eva.</p>
+      <p>At 32, he was elected Municipal President of Pagsanjan for four years (1916–1920). He declined to be re-elected to the position, even when the townspeople wanted him to continue on, due to his health problems.</p>
+      <p>In 1923, he founded the Pagsanjan Academy to serve and augment the lack of schools in his town. Later on, he realized that there was also a need for secondary schools. Children from Pagsanjan went to Laguna High School in Sta. Cruz, Rural High in Los Banos or in Manila to further their schooling. However, no one went to Calamba, as there were no secondary schools there. This thought bore fruit and thus, Laguna Institute was established in 1930.</p>
+      <p>The Laguna Institute flourished amidst the havoc and strife of World War II. It closed down temporarily in 1945 and opened its doors once again in 1950.</p>
+      <p>Don Pedro Llamas died January 13, 1946 at the age of 61 due to a failing heart condition. His demise was a great loss for his family and to the community. Nevertheless, his love for the Filipinos of Laguna continued on with the legacy he left with his heirs; and that is of humble servitude exemplified by providing quality education to the community. He envisioned educating the community and equipping people to become leaders leading them into abundance.</p>
+    </div>
+  </div>
+    
+    <div class="boxcontainer">
+      <div class="boxes" style="font-size: 25px;"> <h1 id="STEM">PHILOSOPHY</h1><br>Inspired by Dr. Jose Rizal’s educational principles, LCBA Education upholds a balanced curriculum towards holistic development for a better quality of life.</div>
+      <div class="boxes" style="font-size: 25px;"> <h1 id="STEM">VISION</h1> <br> LCBA envisions to become an autonomous higher education institution committed to producing holistically developed and globally competitive lifelong learners.</div>
+      <div class="boxes" style="font-size: 25px;"> <h1 id="STEM">MISSION</h1> <br> LCBA commits itself to the total human development of the learners through value-laden and competency-based education, policy-relevant research, and sustainable community involvement.</div>
+      <div class="boxes" style="font-size: 17px;"> <h1 id="STEM">INSTITUTION'S CORE VALUES</h1> <br> As LCBAian, employees and students should develop and possess the following values: <br> <b>INTEGRITY</b> <br> This means doing the right thing even when no one is looking. <br> <b>POSITIVITY</b> <br> This is finding the good in everything. <br> <b>MINDFULNESS</b> <br> This means respecting and accepting individual differences. <br> <b>EXCELLENCE</b> <br> This is exemplifying proper attitude, skill, and knowledge.
+    </div>
+  </div>
+
+  <div class="box-cont">
+    <div class="boxes">
+      <h1 id="STEM">QUALITY OBJECTIVES</h1>
+      <!--Will create two columns-->
+      <div class="qo-grid">
+        <div>
+          1. Promote total development among students for better quality of life; <br>
+          2. Employ experientially and academically aligned educators; <br>
+          3. Implement values-laden and competency-based education; <br>
+          4. Conduct policy-relevant personnel and student research projects; <br>
+          5. Acquire adequate library holdings and maximize library utilization among faculty and students;
+        </div>
+
+        <div>
+          6. Provide curricular and co-curricular activities delivered by highly competent and service-oriented personnel; <br>
+          7. Provide state-of-the-art laboratories and facilities; <br>
+          8. Provide a satisfactory, conducive, and safe learning environment; <br>
+          9. Develop and utilize efficient and effective administrative systems; <br>
+          10. Implement community-empowering extension program; and <br>
+          11. Produce globally competitive graduates who are driven to pursue further studies and are equipped for the world of employment and entrepreneurship.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
