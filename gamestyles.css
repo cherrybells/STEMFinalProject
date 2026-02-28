@@ -8,61 +8,93 @@
 body {
     overflow: hidden;
     touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
+/* ─── BACKGROUND ─────────────────────────────────── */
 .background {
+    position: fixed;
     height: 100vh;
     width: 100vw;
-    background: url("pictures/gamesbackground.jpg") no-repeat center center fixed;
+    background: url("pictures/gamesbackground.jpg") no-repeat center center;
     background-size: cover;
+    z-index: 0;
 }
 
+/* Ground strip – purely cosmetic, collision is handled in JS */
+.ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4vh;
+    background: linear-gradient(#8B5E3C, #5C3D1E);
+    border-top: 3px solid #3a2210;
+    z-index: 5;
+}
+
+/* ─── BIRD ──────────────────────────────────────── */
 .hironobird {
     position: fixed;
     top: 40vh;
     left: 25vw;
     width: 8vw;
-    max-width: 130px;
+    max-width: 120px;
+    min-width: 48px;
     height: auto;
     z-index: 100;
+    transform-origin: center center;
+    transition: transform 0.05s linear;
+    filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.4));
 }
 
+/* Bird tilt classes applied by JS */
+.bird-up   { transform: rotate(-25deg); }
+.bird-fall { transform: rotate(25deg);  }
+.bird-dive { transform: rotate(55deg);  }
+
+/* ─── PIPES ─────────────────────────────────────── */
 .pipe_sprite {
     position: fixed;
     left: 100vw;
     height: 70vh;
     width: 6vw;
-    max-width: 80px;
-    background: radial-gradient(lightgreen, green);
-    border: 5px solid black;
-}
-
-.message {
-    position: absolute;
+    max-width: 75px;
+    min-width: 36px;
+    background: linear-gradient(90deg, #4caf50 0%, #81c784 35%, #4caf50 60%, #2e7d32 100%);
+    border: 3px solid #1b5e20;
+    border-radius: 4px;
+    box-shadow: inset -4px 0 8px rgba(0,0,0,0.3), 2px 2px 6px rgba(0,0,0,0.4);
     z-index: 10;
-    color: black;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 2vw;
 }
 
-.messageStyle {
-    background: linear-gradient(yellow, orange, red, black);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: rgba(0,0,0,0.25) 0px 5px 15px;
+/* Pipe cap (top/bottom lip) via pseudo-element */
+.pipe_sprite::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    height: 22px;
+    background: linear-gradient(90deg, #66bb6a, #43a047);
+    border: 3px solid #1b5e20;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
+.pipe_sprite.pipe-top::after    { bottom: -22px; }
+.pipe_sprite.pipe-bottom::after { top: -22px; }
 
+/* ─── SCORE ─────────────────────────────────────── */
 .score {
     position: fixed;
-    z-index: 10;
-    font-size: 5vh;
+    z-index: 200;
+    font-size: clamp(20px, 5vh, 40px);
     color: white;
     -webkit-text-stroke: 2px black;
     top: 0;
-    margin: 15px;
+    left: 0;
+    margin: 14px 18px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 
 .score_val {
@@ -70,18 +102,116 @@ body {
     font-weight: bold;
 }
 
-/* MOBILE OPTIMIZATION */
+.best-score {
+    position: fixed;
+    z-index: 200;
+    font-size: clamp(14px, 2.5vh, 22px);
+    color: #ffe57f;
+    -webkit-text-stroke: 1px black;
+    top: 0;
+    right: 0;
+    margin: 14px 18px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+
+/* ─── MESSAGE OVERLAY ───────────────────────────── */
+.message {
+    position: fixed;
+    z-index: 300;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 22px);
+    color: #222;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.message.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.messageStyle {
+    background: linear-gradient(160deg, #ffe259, #ffa751, #ff4e50, #1a1a2e);
+    padding: 22px 28px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    color: white;
+    -webkit-text-stroke: 0px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.message-title {
+    font-size: clamp(20px, 5vw, 42px);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #fff8dc;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.message-sub {
+    font-size: clamp(13px, 2.2vw, 20px);
+    margin-bottom: 8px;
+}
+
+.message-hint {
+    font-size: clamp(11px, 1.8vw, 16px);
+    opacity: 0.85;
+    margin-top: 6px;
+}
+
+.key-hint {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    padding: 1px 7px;
+    font-weight: bold;
+}
+
+/* Flash effect on score increase */
+@keyframes scoreFlash {
+    0%   { transform: scale(1.5); color: white; }
+    100% { transform: scale(1);   color: gold;  }
+}
+.score-flash { animation: scoreFlash 0.2s ease-out; }
+
+/* Bird wing-flap shimmer */
+@keyframes wingFlap {
+    0%, 100% { filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.4)); }
+    50%       { filter: drop-shadow(2px 3px 8px rgba(255,220,0,0.6)); }
+}
+.bird-flap { animation: wingFlap 0.15s ease-in-out; }
+
+/* ─── MOBILE ─────────────────────────────────────── */
 @media only screen and (max-width: 768px) {
+    .hironobird {
+        width: 18vw;
+        max-width: 90px;
+    }
+    .pipe_sprite {
+        width: 11vw;
+        max-width: 60px;
+    }
     .message {
         font-size: 5vw;
         top: 45%;
+        width: 80vw;
     }
+    .message-title {
+        font-size: clamp(20px, 7vw, 36px);
+    }
+    .ground {
+        height: 5vh;
+    }
+}
 
-    .hironobird {
-        width: 20vw;
-    }
-
-    .pipe_sprite {
-        width: 12vw;
-    }
+@media only screen and (max-width: 400px) {
+    .hironobird { width: 22vw; }
+    .pipe_sprite { width: 13vw; }
 }
